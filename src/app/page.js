@@ -1,4 +1,5 @@
 import Rating from "@/Rating/rating";
+import AddToCartBtn from "@/components/AddToCartBtn";
 import { getAllProducts } from "@/utils/GetProducts";
 import Image from "next/image";
 
@@ -70,7 +71,7 @@ export default async function Home() {
                     className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col justify-between"
                   >
                     <div>
-                      <a href="#">
+                    
                         <Image
                           src={`${prod.image}`}
                           width={300}
@@ -79,7 +80,7 @@ export default async function Home() {
                           alt="cart image"
                           quality={100}
                         />
-                      </a>
+                    
                       <div className="p-3 !self-baselinea !self-start ">
                         <a href="#">
                           <h5 className="text-base font-semibold tracking-tight text-gray-900 ">
@@ -107,24 +108,20 @@ export default async function Home() {
                         </p>
                       </div>
                       <div className="flex justify-between">
-
-                      <span className="text-xl font-bold text-[#F2415A] ">
-                        ${prod.price}
-                      </span>
-                      <a
-                        href="#"
-                        className="text-white bg-[#212529] hover:bg-[#F2415A] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-[10px] py-[6px] text-center "
-                        >
-                        Add to cart
-                      </a>
-                        </div>
+                        <span className="text-xl font-bold text-[#F2415A] ">
+                          ${prod.price}
+                        </span>
+                        <AddToCartBtn product={prod} />
+                      </div>
                     </div>
                   </div>
                 );
               })}
           </div>
         </div>
-        <div className="col-span-2 h-32 rounded-lg bg-gray-200"></div>
+        <div className="col-span-2 h-32 rounded-lg bg-gray-200">
+
+        </div>
       </div>
     </main>
   );

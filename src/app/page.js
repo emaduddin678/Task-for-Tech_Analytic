@@ -1,5 +1,6 @@
 import Rating from "@/Rating/rating";
 import AddToCartBtn from "@/components/AddToCartBtn";
+import ProductsCart from "@/components/ProductsCart";
 import { getAllProducts } from "@/utils/GetProducts";
 import Image from "next/image";
 
@@ -60,7 +61,7 @@ export default async function Home() {
               </div>
             </fieldset>
           </div>
-          
+
           <div className="cartContainer grid grid-cols-2 justify-between gap-3 lg:grid-cols-3">
             {/* single cart  */}
             {products.length > 0 &&
@@ -71,16 +72,15 @@ export default async function Home() {
                     className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col justify-between"
                   >
                     <div>
-                    
-                        <Image
-                          src={`${prod.image}`}
-                          width={300}
-                          height={320}
-                          className="!w-full h-80"
-                          alt="cart image"
-                          quality={100}
-                        />
-                    
+                      <Image
+                        src={`${prod.image}`}
+                        width={300}
+                        height={320}
+                        className="!w-full h-80"
+                        alt="cart image"
+                        quality={100}
+                      />
+
                       <div className="p-3 !self-baselinea !self-start ">
                         <a href="#">
                           <h5 className="text-base font-semibold tracking-tight text-gray-900 ">
@@ -120,7 +120,7 @@ export default async function Home() {
           </div>
         </div>
         <div className="col-span-2 h-32 rounded-lg bg-gray-200">
-
+          <ProductsCart />
         </div>
       </div>
     </main>

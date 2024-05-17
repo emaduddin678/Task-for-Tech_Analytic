@@ -1,9 +1,10 @@
-import React from "react";
+import React  from "react";
 import ProductsCart from "@/components/ProductsCart";
+import Checkbox from "./Checkbox";
+import Price from "./Price";
 
 const MyCartView = ({ cartPage }) => {
-//   console.log("🚀 ~ MyCartView ~ homePage:", cartPage);
-
+ 
   return (
     <div className="flex justify-center items-center py-16">
       <div className="w-[620px] py-3 px-2 overflow-hidden rounded-lg shadow transition hover:shadow-lg">
@@ -18,21 +19,10 @@ const MyCartView = ({ cartPage }) => {
         {/* All product added by an user is start here     */}
 
         <div className="mt-6 w-full">
-          <h3
-            className={`mt-0.5 font-bold ${
-              cartPage ? "text-center" : "text-right"
-            }  text-lg text-[#212529] uppercase`}
-          >
-            Total: $0
-          </h3>
+          <Price cartPage={cartPage} />
 
           <div className="flex items-center mt-6">
-            <input
-              id="link-checkbox"
-              type="checkbox"
-              value=""
-              className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded focus:outline-none"
-            />
+            <Checkbox />
             <label
               htmlFor="link-checkbox"
               className="ml-8 leading-5	tracking-widest  ms-2 text-sm font-medium text-black "

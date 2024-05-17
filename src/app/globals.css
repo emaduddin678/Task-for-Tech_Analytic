@@ -33,3 +33,7 @@ nav ul li:hover::after{
 nav ul li.active::after{
   width: 16px;
 }
+
+.imageBoxShadow{
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}

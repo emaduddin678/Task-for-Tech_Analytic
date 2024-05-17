@@ -1,6 +1,5 @@
 import MyCartView from "@/components/MyCartView";
 import OurAllProducts from "@/components/OurAllProducts";
-import ProductsCart from "@/components/ProductsCart";
 import ViewControl from "@/components/ViewControl";
 import { getAllProducts } from "@/utils/GetProducts";
 
@@ -8,7 +7,7 @@ export default async function Home() {
   const products = await getAllProducts();
 
   return (
-    <main className="  p-24">
+    <main className="px-10 py-20">
       <div className="grid  gap-4 grid-cols-5 ">
         <div className="lg:col-span-3 col-span-5  rounded-lg ">
           <div className="filterBox mb-8">
@@ -51,7 +50,7 @@ export default async function Home() {
           <OurAllProducts products={products} />
         </div>
         <div className="lg:block hidden lg:col-span-2 h-32 rounded-lg mt-6">
-          <MyCartView />
+          <MyCartView cartPage={false} />
         </div>
       </div>
     </main>

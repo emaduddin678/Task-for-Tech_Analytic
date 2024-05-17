@@ -5,11 +5,12 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { useDispatch, useSelector } from "react-redux";
 import dynamic from "next/dynamic";
+import { removeFromCart } from "@/lib/features/products/cartSlice";
 
 
 const ProductsCart = () => {
   const cart = useSelector((state) => state.cartReducer.cart);
-
+  const dispatch= useDispatch()
   return (
     <section className="mx-auto max-w-screen-xl  py-4 ">
       <div className="mx-auto max-w-3xl">
@@ -48,13 +49,13 @@ const ProductsCart = () => {
                       </div>
                       <dl className="mt-4 space-y-px text-[10px] text-gray-600">
                         <p className="text-[#F2415A] font-bold text-xl">
-                          Single Price ${prod.price}
+                          ${prod.price}
                         </p>
                       </dl>
                     </div>
 
                     <div className="flex flex-1 items-center justify-end ">
-                      <form>
+                      <form className="flex flex-col gap-1 items-center justify-center mr-4">
                         <label className="text-gray-500" htmlFor="Line3Qty">
                           {" "}
                           Quantity{" "}
@@ -66,10 +67,13 @@ const ProductsCart = () => {
                           disabled
                           placeholder={prod.quantity}
                           id="Line3Qty"
-                          className="h-8 w-2 mr-6 rounded border-gray-200 bg-gray-50 p-0 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+                          className="h-8 w-2  rounded border-gray-200 bg-gray-50 p-0 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
                         />
                       </form>
-                      <button className="mr-3 transition  text-[#F2415A]">
+                      <button
+                        onClick={() => dispatch(removeFromCart(prod))}
+                        className="mr-3 transition  text-[#F2415A]"
+                      >
                         <span className="sr-only">Remove item</span>
 
                         <svg

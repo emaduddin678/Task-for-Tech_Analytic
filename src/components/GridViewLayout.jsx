@@ -17,12 +17,12 @@ const GridViewLayout = ({ products }) => {
             key={prod.id}
             className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col justify-between"
           >
-            <div>
+            <div className="pt-3">
               <Image
                 src={`${prod.image}`}
                 width={300}
                 height={320}
-                className="!w-full h-80"
+                className="w-auto mx-auto h-44 p-4 imageBoxShadow rounded-md"
                 alt="cart image"
                 quality={100}
               />

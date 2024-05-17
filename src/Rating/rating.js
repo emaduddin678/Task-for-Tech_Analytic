@@ -27,7 +27,6 @@ const Rating = (props) => {
     ratingInPercent,
     showOutOf,
     enableUserInteraction,
-    onClick
   } = props;
 
   const [activeStar, setActiveStar] = useState(-1);

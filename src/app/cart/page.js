@@ -13,7 +13,7 @@ const Cartpage = () => {
           Selected Products
         </button>
 
-        <section><ProductsCart /></section>
+        <ProductsCart />
         {/* All product added by an user is start here     */}
 
         <div className="mt-6 w-full">

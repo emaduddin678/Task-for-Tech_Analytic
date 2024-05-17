@@ -1,4 +1,5 @@
-import Rating from "@/Rating/rating";
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 import Image from "next/image";
 import AddToCartBtn from "./AddToCartBtn";
 const ListViewLayout = ({ products }) => {
@@ -27,11 +28,9 @@ const ListViewLayout = ({ products }) => {
                       <dl className="mt-4 space-y-px text-[10px] text-gray-600">
                         <div>
                           <Rating
-                            ratingInPercent={prod.rating.rate * 20}
-                            iconSize="l"
-                            showOutOf={true}
-                            enableUserInteraction={false}
-                            onClick={false}
+                            style={{ maxWidth: 100 }}
+                            value={prod.rating.rate}
+                            readOnly
                           />
                         </div>
 

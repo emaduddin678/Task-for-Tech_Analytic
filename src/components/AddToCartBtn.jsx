@@ -4,7 +4,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 const AddToCartBtn = (props) => {
   const cart = useSelector((state) => state.cartReducer.cart);
-  console.log("🚀 ~ AddToCartBtn ~ cart:", cart);
+  // console.log("🚀 ~ AddToCartBtn ~ cart:", cart);
   const dispatch = useDispatch();
   const handleCart = () => {
     const productData = props.product;

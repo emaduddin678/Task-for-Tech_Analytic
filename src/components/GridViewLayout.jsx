@@ -1,12 +1,16 @@
-import Rating from "@/Rating/rating";
-import Image from "next/image";
+
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 import AddToCartBtn from "./AddToCartBtn";
+import Image from "next/image";
 
 const GridViewLayout = ({ products }) => {
+
   return (
     <div
       className={`cartContainer  justify-between gap-3 grid grid-cols-2 lg:grid-cols-3`}
     >
+      
       {products.map((prod) => {
         return (
           <div
@@ -24,23 +28,18 @@ const GridViewLayout = ({ products }) => {
               />
 
               <div className="p-3 !self-baselinea !self-start ">
-                <a href="#">
-                  <h5 className="text-base font-semibold tracking-tight text-gray-900 ">
-                    {prod.title}
-                  </h5>
+                <a
+                  href="#"
+                  className="text-base font-semibold tracking-tight text-gray-900 "
+                >
+                  {prod.title}
                 </a>
               </div>
             </div>
             <div className="flex flex-col p-3 pt-0">
               <div>
                 <div className="flex items-center space-x-1 rtl:space-x-reverse">
-                  <Rating
-                    ratingInPercent={prod.rating.rate * 20}
-                    iconSize="l"
-                    showOutOf={true}
-                    enableUserInteraction={false}
-                    onClick={false}
-                  />
+                  <Rating style={{ maxWidth: 100 }} value={prod.rating.rate} readOnly />
                 </div>
                 <p className="text-gray-500 ">({prod.rating.count} Review)</p>
               </div>

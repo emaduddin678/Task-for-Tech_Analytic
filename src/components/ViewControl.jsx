@@ -6,7 +6,7 @@ import { changeView } from "@/lib/features/views/viewsSlice";
 
 const ViewControl = () => {
   const viewReducer = useSelector((state) => state.viewReducer);
-  console.log("🚀 ~ ViewControl ~ grid:", viewReducer);
+  // console.log("🚀 ~ ViewControl ~ grid:", viewReducer);
   const dispatch = useDispatch();
   return (
     <div className="flex justify-between items-center mr-2 gap-3">

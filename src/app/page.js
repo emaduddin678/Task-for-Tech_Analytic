@@ -1,3 +1,4 @@
+import MyCartView from "@/components/MyCartView";
 import OurAllProducts from "@/components/OurAllProducts";
 import ProductsCart from "@/components/ProductsCart";
 import ViewControl from "@/components/ViewControl";
@@ -49,8 +50,8 @@ export default async function Home() {
 
           <OurAllProducts products={products} />
         </div>
-        <div className="lg:block hidden lg:col-span-2 h-32 rounded-lg bg-gray-200">
-          <ProductsCart />
+        <div className="lg:block hidden lg:col-span-2 h-32 rounded-lg mt-6">
+          <MyCartView />
         </div>
       </div>
     </main>

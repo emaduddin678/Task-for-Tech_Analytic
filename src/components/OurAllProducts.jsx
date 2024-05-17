@@ -1,8 +1,5 @@
 "use client";
-import React, { Fragment, useState } from "react";
-import Rating from "@/Rating/rating";
-import AddToCartBtn from "@/components/AddToCartBtn";
-import Image from "next/image";
+import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
 import GridViewLayout from "./GridViewLayout";
 import ListViewLayout from "./ListViewLayout";

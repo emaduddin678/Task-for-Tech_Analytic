@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 // Load cart state from localStorage or use an empty array as initial state
-const initialCart = localStorage.getItem("cart")
+const initialCart = typeof localStorage !== 'undefined' && localStorage.getItem("cart")
   ? JSON.parse(localStorage.getItem("cart"))
   : [];
 
@@ -18,12 +18,12 @@ export const cartSlice = createSlice({
       );
 
       if (existingItem) {
-        existingItem.quantity += 1; // Increment quantity if item exists
+        existingItem.quantity += 1; 
       } else {
-        state.cart.push({ ...item, quantity: 1 }); // Add new item to cart with quantity 1
+        state.cart.push({ ...item, quantity: 1 }); 
       }
 
-      // Update localStorage with the updated cart state
+      
       localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     removeFromCart: (state, action) => {

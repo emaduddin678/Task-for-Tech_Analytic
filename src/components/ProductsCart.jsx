@@ -2,33 +2,23 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Rating from "@/Rating/rating";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProductsCart = () => {
-  const [localStorageMyProduct, setLocalStorageMyProduct] = useState([]);
+    const cart = useSelector((state) => state.cartReducer.cart);
 
+  const [localStorageMyProduct, setLocalStorageMyProduct] = useState([]);
+  // const [changeStorage, setChangeStorage] = useState(0);
   useEffect(() => {
-    const handleStorageChange = () => {
       const updatedProduct = JSON.parse(localStorage.getItem("myProduct"));
       setLocalStorageMyProduct(updatedProduct || []);
-    };
-
-    // Add event listener for storage change
-    window.addEventListener("storage", handleStorageChange);
-
-    // Call the handler immediately to get the initial value
-    handleStorageChange();
-
-    // Cleanup function to remove event listener
-    return () => {
-      window.removeEventListener("storage", handleStorageChange);
-    };
   }, []);
   return (
     <>
-      {localStorageMyProduct.length > 0 &&
-        localStorageMyProduct.map((prod) => {
+      {cart.length > 0 &&
+        cart.map((prod, i) => {
           return (
-            <div key={prod.id} className="mx-auto max-w-screen-xl  py-4 ">
+            <div key={i} className="mx-auto max-w-screen-xl  py-4 ">
               <div className="mx-auto max-w-3xl">
                 <div className="mt-8">
                   <ul className="space-y-4">
@@ -70,7 +60,7 @@ const ProductsCart = () => {
 
                       <div className="flex flex-1 items-center justify-end ">
                         <form>
-                          <label className="text-gray-500" htmlFor="Line3Qty" >
+                          <label className="text-gray-500" htmlFor="Line3Qty">
                             {" "}
                             Quantity{" "}
                           </label>
@@ -79,7 +69,7 @@ const ProductsCart = () => {
                             type="number"
                             min="5"
                             disabled
-                            placeholder={5}
+                            placeholder={prod.quantity}
                             id="Line3Qty"
                             className="h-8 w-2 mr-6 rounded border-gray-200 bg-gray-50 p-0 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
                           />

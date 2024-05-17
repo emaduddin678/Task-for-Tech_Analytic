@@ -1,36 +1,21 @@
-import Rating from "@/Rating/rating";
-import AddToCartBtn from "@/components/AddToCartBtn";
+import OurAllProducts from "@/components/OurAllProducts";
 import ProductsCart from "@/components/ProductsCart";
+import ViewControl from "@/components/ViewControl";
 import { getAllProducts } from "@/utils/GetProducts";
-import Image from "next/image";
 
 export default async function Home() {
   const products = await getAllProducts();
-  console.log(products[0].image);
 
   return (
     <main className="  p-24">
       <div className="grid  gap-4 grid-cols-5 ">
-        <div className="col-span-3  rounded-lg ">
+        <div className="lg:col-span-3 col-span-5  rounded-lg ">
           <div className="filterBox mb-8">
             <div className="flex justify-between items-center">
               <h1 className="text-[#282828] font-semibold text-3xl">
                 Our All Products
               </h1>
-              <div className="flex justify-between items-center mr-2 gap-3">
-                <Image
-                  src={"/grid.svg"}
-                  width={25}
-                  height={25}
-                  alt={"This is grid icon."}
-                />
-                <Image
-                  src={"/list.svg"}
-                  width={25}
-                  height={25}
-                  alt={"This is list icon."}
-                />
-              </div>
+              <ViewControl />
             </div>
             <fieldset className="w-full mt-5 space-y-1 text-gray-100">
               <label htmlFor="Search" className="hidden">
@@ -62,64 +47,9 @@ export default async function Home() {
             </fieldset>
           </div>
 
-          <div className="cartContainer grid grid-cols-2 justify-between gap-3 lg:grid-cols-3">
-            {/* single cart  */}
-            {products.length > 0 &&
-              products.map((prod) => {
-                return (
-                  <div
-                    key={prod.id}
-                    className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col justify-between"
-                  >
-                    <div>
-                      <Image
-                        src={`${prod.image}`}
-                        width={300}
-                        height={320}
-                        className="!w-full h-80"
-                        alt="cart image"
-                        quality={100}
-                      />
-
-                      <div className="p-3 !self-baselinea !self-start ">
-                        <a href="#">
-                          <h5 className="text-base font-semibold tracking-tight text-gray-900 ">
-                            {prod.title}
-                          </h5>
-                        </a>
-                        {/* <div className="flex items-center  my-4">
-                          
-                        </div> */}
-                      </div>
-                    </div>
-                    <div className="flex flex-col p-3 pt-0">
-                      <div>
-                        <div className="flex items-center space-x-1 rtl:space-x-reverse">
-                          <Rating
-                            ratingInPercent={prod.rating.rate * 20}
-                            iconSize="l"
-                            showOutOf={true}
-                            enableUserInteraction={false}
-                            onClick={false}
-                          />
-                        </div>
-                        <p className="text-gray-500 ">
-                          ({prod.rating.count} Review)
-                        </p>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-xl font-bold text-[#F2415A] ">
-                          ${prod.price}
-                        </span>
-                        <AddToCartBtn product={prod} />
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-          </div>
+          <OurAllProducts products={products} />
         </div>
-        <div className="col-span-2 h-32 rounded-lg bg-gray-200">
+        <div className="lg:block hidden lg:col-span-2 h-32 rounded-lg bg-gray-200">
           <ProductsCart />
         </div>
       </div>

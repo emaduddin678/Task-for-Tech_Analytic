@@ -1,3 +1,4 @@
+import FilterProduct from "@/components/FilterProduct";
 import MyCartView from "@/components/MyCartView";
 import OurAllProducts from "@/components/OurAllProducts";
 import ProductsPagination from "@/components/Pagination";
@@ -6,6 +7,8 @@ import { getAllProducts } from "@/utils/GetProducts";
 
 export default async function Home() {
   const products = await getAllProducts();
+
+
 
   return (
     <main className="px-10 py-20">
@@ -38,12 +41,7 @@ export default async function Home() {
                     </svg>
                   </button>
                 </span>
-                <input
-                  type="search"
-                  name="Search"
-                  placeholder="Search An Item..."
-                  className="w-full rounded-3xl border-[#49525A] border outline-black text-black  py-2 pl-10 text-sm   focus:outline-none    focus:border-b-[#49525A]"
-                />
+              <FilterProduct />
               </div>
             </fieldset>
           </div>

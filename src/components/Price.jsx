@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import {  useSelector } from "react-redux";
+import {   useSelector } from "react-redux";
 
 const Price = ({cartPage}) => {
   const totalPrice = useSelector((state) => state.cartReducer.totalPrice);

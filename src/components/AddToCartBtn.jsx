@@ -6,34 +6,7 @@ const AddToCartBtn = (props) => {
   const cart = useSelector((state) => state.cartReducer.cart);
   // console.log("🚀 ~ AddToCartBtn ~ cart:", cart);
   const dispatch = useDispatch();
-  const handleCart = () => {
-    const productData = props.product;
-    let productArray = [];
-    let filteredArray = [];
 
-    const existingProducts = localStorage.getItem("myProduct");
-    if (existingProducts) {
-      productArray = JSON.parse(existingProducts);
-      filteredArray = productArray.filter((p) => {
-        return p.id === productData.id;
-      });
-      if (filteredArray.length) {
-        productArray = productArray.filter((p) => {
-          return p.id !== productData.id;
-        });
-        productArray.push({
-          ...filteredArray[0],
-          quantity: filteredArray[0].quantity + 1,
-        });
-      } else {
-        productArray.push({ ...productData, quantity: 1 });
-      }
-    } else {
-      productArray.push({ ...productData, quantity: 1 });
-    }
-
-    localStorage.setItem("myProduct", JSON.stringify(productArray));
-  };
 
   return (
     <>

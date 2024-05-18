@@ -47,7 +47,7 @@ const GridViewLayout = ({ products }) => {
                   </div>
                   <p className="text-gray-500 ">({prod.rating.count} Review)</p>
                 </div>
-                <div className="flex justify-between flex-col md:flex-row">
+                <div className="flex justify-between flex-col xl:flex-row lg:flex-col md:flex-row">
                   <span className="text-xl font-bold text-[#F2415A]">
                     ${prod.price}
                   </span>

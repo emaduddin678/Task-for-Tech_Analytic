@@ -4,6 +4,9 @@ import {   useSelector } from "react-redux";
 
 const Price = ({cartPage}) => {
   const totalPrice = useSelector((state) => state.cartReducer.totalPrice);
+  const formattedPrice = (
+    typeof totalPrice === "number" ? totalPrice : 0
+  ).toFixed(2);
 
   return (
     <h3
@@ -11,7 +14,9 @@ const Price = ({cartPage}) => {
         cartPage ? "text-center" : "text-right"
       }  text-lg text-[#212529] uppercase`}
     >
-      Total: ${totalPrice.toFixed(2)}
+      {/* Total: ${totalPrice.toFixed(2)} */}
+      Total: ${formattedPrice}
+      {/* Total: ${typeof totalPrice} */}
     </h3>
   );
 };

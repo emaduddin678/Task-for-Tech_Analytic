@@ -1,10 +1,10 @@
-import React  from "react";
+import React from "react";
 import ProductsCart from "@/components/ProductsCart";
 import Checkbox from "./Checkbox";
 import Price from "./Price";
+import CartBtn from "./CartBtn";
 
 const MyCartView = ({ cartPage }) => {
- 
   return (
     <div className="flex justify-center items-center py-16">
       <div className="w-[620px] py-3 px-2 overflow-hidden rounded-lg shadow transition hover:shadow-lg">
@@ -34,15 +34,10 @@ const MyCartView = ({ cartPage }) => {
               .
             </label>
           </div>
-
-          <button
-            type="button"
-            className={`${
-              cartPage ? "mx-auto" : "ml-auto"
-            }   mt-6 px-3 py-[10px]  font-semibold rounded block  bg-[#212529] text-white text-xs`}
-          >
-            Checkout
-          </button>
+          <div className={`flex gap-2 ${cartPage ? "justify-end" : "justify-center"}`}>
+            <CartBtn btnTxt={"Clear Cart!"}  />
+            <CartBtn btnTxt={"Checkout"}  />
+          </div>
         </div>
       </div>
     </div>

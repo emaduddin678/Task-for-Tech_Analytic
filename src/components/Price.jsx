@@ -14,7 +14,7 @@ const Price = ({cartPage}) => {
         cartPage ? "text-center" : "text-right"
       }  text-lg text-[#212529] uppercase`}
     >
-      {/* Total: ${totalPrice.toFixed(2)} */}
+      {/* Total: ${parseInt(totalPrice).toFixed(2)} */}
       Total: ${formattedPrice}
       {/* Total: ${typeof totalPrice} */}
     </h3>

@@ -1,5 +1,6 @@
 import MyCartView from "@/components/MyCartView";
 import OurAllProducts from "@/components/OurAllProducts";
+import ProductsPagination from "@/components/Pagination";
 import ViewControl from "@/components/ViewControl";
 import { getAllProducts } from "@/utils/GetProducts";
 
@@ -9,7 +10,7 @@ export default async function Home() {
   return (
     <main className="px-10 py-20">
       <div className="grid  gap-4 grid-cols-5 ">
-        <div className="lg:col-span-3 col-span-5  rounded-lg ">
+        <div className="lg:col-span-3 col-span-5  rounded-lg flex flex-col ">
           <div className="filterBox mb-8">
             <div className="flex justify-between items-center">
               <h1 className="text-[#282828] font-semibold text-3xl">
@@ -47,10 +48,11 @@ export default async function Home() {
             </fieldset>
           </div>
 
-          <OurAllProducts products={products} />
+          <OurAllProducts products={products} productsPerPage={6} />
+          <ProductsPagination  products={products} productsPerPage={6} />
         </div>
-        <div className="lg:block hidden lg:col-span-2 h-32 rounded-lg mt-6">
-          <MyCartView cartPage={false} />
+        <div className="lg:block hidden lg:col-span-2 rounded-lg mt-6">
+          <MyCartView cartPage={false} productsPerPage={6} />
         </div>
       </div>
     </main>

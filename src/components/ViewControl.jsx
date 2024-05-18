@@ -6,7 +6,7 @@ import { changeView } from "@/lib/features/views/viewsSlice";
 
 const ViewControl = () => {
   const viewReducer = useSelector((state) => state.viewReducer);
-  console.log("🚀 ~ ViewControl ~ grid:", viewReducer.grid);
+  // console.log("🚀 ~ ViewControl ~ grid:", viewReducer.grid);
   const [grid, setGrid] = useState(viewReducer.grid);
   const dispatch = useDispatch();
   const handleClick = () => {

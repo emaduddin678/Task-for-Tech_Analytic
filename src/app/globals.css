@@ -9,12 +9,12 @@
     list-style-type: none;
 }
 
-nav ul li{
+ul.nav li{
   list-style: none;
   position: relative;
 }
 
-nav ul li:after{
+ul.nav li:after{
   content: '';
   width: 0;
   height: 3px;
@@ -26,11 +26,11 @@ nav ul li:after{
   border-radius: 10px;
 }
 
-nav ul li:hover::after{
+ul.nav li:hover::after{
   width:100%;
 }
 
-nav ul li.active::after{
+ul.nav li.active::after{
   width: 16px;
 }
 

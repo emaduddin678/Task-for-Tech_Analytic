@@ -28,12 +28,12 @@ const GridViewLayout = ({ products }) => {
                 />
 
                 <div className="p-3 !self-baselinea !self-start ">
-                  <a
-                    href="#"
+                  <h1
+                   
                     className="text-base font-semibold tracking-tight text-gray-900 "
                   >
                     {prod.title}
-                  </a>
+                  </h1>
                 </div>
               </div>
               <div className="flex flex-col p-3 pt-0">

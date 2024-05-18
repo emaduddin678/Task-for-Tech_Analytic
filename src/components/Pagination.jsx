@@ -8,10 +8,10 @@ const ProductsPagination = ({ products, productsPerPage }) => {
  );
  
   const dispatch = useDispatch();
-  // Calculate total pages
+  
   const totalPages = Math.ceil(products.length / productsPerPage);
 
-  // Handle page change
+  
   const handlePageChange = (pageNumber) => {
 
      dispatch(pageChange(pageNumber));

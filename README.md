@@ -1,37 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Tech Analytic Limited Task 
 
-First, run the development server:
+A Frontend Interview task given by Tech Analytic Limited.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Links
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Project Demo Link: https://techanalytictask.netlify.app
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+GitHub Repository Link: https://github.com/emaduddin678/Task-for-Tech_Analytic.git
 
-## Learn More
+## Key Features
 
-To learn more about Next.js, take a look at the following resources:
+- Frontend Design as per the Figma
+- Data (20 product) fetching in SSR (Pagination the Result)
+- Data-persistent by localstorage
+- Realtime cart updated and state management by Redux
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Additional Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- App Route and SSR
+- Filter System Implementation
+- Pagination Implementation
+- Product Quantity with Perfect Price Implementation
+- Grid View and List View Implementation
+- Clear Entire Cart Implementation
+- Single Cart Cart Clear option
+- Fractional Rating Implementation
 
-## Deploy on Vercel
+## Authors
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [@emaduddin678](https://www.github.com/emaduddin678)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# Task-for-Tech_Analytic

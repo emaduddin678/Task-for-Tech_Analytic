@@ -34,9 +34,13 @@ const MyCartView = ({ cartPage }) => {
               .
             </label>
           </div>
-          <div className={`flex gap-2 ${cartPage ? "justify-end" : "justify-center"}`}>
-            <CartBtn btnTxt={"Clear Cart!"}  />
-            <CartBtn btnTxt={"Checkout"}  />
+          <div
+            className={`flex gap-2 ${
+              cartPage ? "justify-end" : "justify-center"
+            }`}
+          >
+            <CartBtn btnTxt={"Clear Cart!"} btnType="clear" />
+            <CartBtn btnTxt={"Checkout"} btnType="order" />
           </div>
         </div>
       </div>
